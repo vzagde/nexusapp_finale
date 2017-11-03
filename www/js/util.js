@@ -63,6 +63,41 @@ function login(){
 
 }
 
+function zip_unzip_code() {
+    var directory;
+    if (cordova.file.documentsDirectory) {
+        directory = cordova.file.documentsDirectory;
+    } else {
+        directory = cordova.file.externalRootDirectory;
+    }
+
+    var file_download =  directory+'/'+archive+".zip";
+
+    var fileTransfer = new FileTransfer();
+    var uri = encodeURI("http://kreaserv-tech.com/Archive.zip");
+
+    fileTransfer.download(
+        uri,
+        file_download,
+        function(entry) {
+           zip.unzip(file_download, ,function (){console.log('file unzip Success')});
+           console.log("download complete: " + entry.toURL());
+        },
+        function(error) {
+            console.log("download error source " + error.source);
+            console.log("download error target " + error.target);
+            console.log("download error code" + error.code);
+        }, false, {
+        }
+    );
+
+    zip.unzip('http://kreaserv-tech.com/Archive.zip', cordova.file.dataDirectory + 'files/download/', 
+        function success_callbak() {
+            console.log('Success');
+        }, function progress_callbak() {
+    });
+}
+
 function download_image(){
     $('.box_height').animate({
         "height": "100%"
@@ -88,6 +123,8 @@ function download_image(){
         $('.heart').animate({"margin-left":"98%"});
         $('.progress_text').text('THANK YOU FOR DOWNLOADING ');
         $('.p_t1').fadeIn();
+        zip_unzip_code();
+
     })
     .fail(function(err) {
         myApp.hideIndicator();
