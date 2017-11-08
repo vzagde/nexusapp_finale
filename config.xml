@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.kreaserv.nexus" version="2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.kreaserv.nexus" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>NEXUS LEASING APP</name>
     <description>
         Nexus Malls is the Indian Retail Portfolio arm of world’s leading investment firm, The Blackstone Group. Nexus Malls marked its foray into Indian Retailing in 2016 with an aim to transform the shopping experience of the Indian consumers. Growing at a great pace since inception, Nexus Malls now boasts of a portfolio of 4.5 million square feet of Grade A retail space in the country. Nexus Malls have thereby established themselves as one of the leaders in the retail real estate industry in India.
@@ -14,6 +14,7 @@
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <preference name="orientation" value="landscape" />
+    <preference name='phonegap-version' value='cli-6.5.0' />
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
